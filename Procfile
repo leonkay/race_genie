@@ -1,1 +1,1 @@
-web: bundle exec ruby app/application.rb
+web: bundle exec ruby app/application.rb -p 24522
