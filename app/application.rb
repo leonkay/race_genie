@@ -4,6 +4,23 @@ require "sinatra"
 require "json"
 require "omniauth-singly"
 
+class Event
+  attr_accessor :name 
+  def initialize(name)
+    @name = name
+  end
+
+end
+
+class Sport
+  attr_accessor :name ,:events
+  
+  def initialize(name, events)
+    @name = name
+    @events = events
+  end
+
+end
 
 RK_SELF = 'https://api.singly.com/services/runkeeper/self'
 
@@ -39,6 +56,23 @@ get "/logout" do
 end
 
 get '/genie' do
+
+  event1 = Event.new("Event 1")
+  event2 = Event.new("Event 2")
+  event3 = Event.new("Event 3")
+  event4 = Event.new("Event 4")
+  event5 = Event.new("Event 5")
+  event6 = Event.new("Event 6")
+
+
+  running_events = [event1,event2,event3]
+  running = Sport.new("running", running_events)
+
+  biking_events = [event4,event5,event6]
+  biking = Sport.new("biking", biking_events)  
+
+  @sports = [running, biking]
+
   erb :genie
 end
 
