@@ -2,7 +2,8 @@
     {
         "id":1,
         "name":"Color Run",
-        "type":"5k",
+        "classification":"5k",
+        "activity_type":"RUNNING",
         "date":"11/20/2012 at 8pm",
         "time_frame" : "1month",
         "image_url" : "http://dummy.data.com/image.jpeg",

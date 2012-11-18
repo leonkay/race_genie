@@ -4,14 +4,7 @@ require "sinatra"
 require "json"
 require "omniauth-singly"
 load 'app/routes/runkeeper.rb'
-
-class Event
-  attr_accessor :name 
-  def initialize(name)
-    @name = name
-  end
-
-end
+load 'app/helpers/runkeeper_helper.rb'
 
 class Sport
   attr_accessor :name ,:events
@@ -41,8 +34,18 @@ get "/" do
     @profiles = HTTParty.get(profiles_url, {
                   :query => {:access_token => session[:access_token]}
                 }).parsed_response
+
+    # Get User Data
+    @user = get_user_data
+
+    # What does Genie Think
+    messages = genie_thinks
+
+    erb :main
+  else
+    erb :home
   end
-  erb :index
+
 end
 
 get "/auth/singly/callback" do
@@ -80,5 +83,43 @@ end
 
 def profiles_url
   "#{SINGLY_API_BASE}/profiles"
+end
+
+def genie_thinks
+  activities = get_activities
+
+  # Get Summary Data
+  summarizer = Summarizer.new
+  activities.each do |activity|
+    summarizer.add_activity(activity)
+  end
+
+  summaries = summarizer.summarize
+
+  messages = Array.new
+  summaries.each do |summary|
+    if summary.total_dist < 10000 # 10km
+      status = 'A Total Newb'
+    elsif summary.total_dist < 30000 # 30km
+      status = 'A Beginner'
+    elsif summary.total_dist < 100000 # 100km
+      status = 'A Road Warrior'
+    else
+      status = 'INSANE!'
+    end
+
+    pre_msg = "You're a #{summary.activity_type} and #{status}"
+    if summary.in_the_past[:month] < 5000
+      msg = "#{pre_msg}, but you've been SLACKING!"
+    else
+      msg = "#{pre_msg} and you've been going strong."
+    end
+
+    messages << msg
+
+  end
+
+  messages
+
 end
 

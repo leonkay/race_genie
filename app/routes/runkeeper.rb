@@ -7,6 +7,7 @@ require 'active_support/all'
 load 'app/helpers/runkeeper_helper.rb'
 load 'app/model/user.rb'
 load 'app/model/summary.rb'
+load 'app/model/event.rb'
 
 enable :sessions
 
@@ -23,6 +24,11 @@ end
 get "/events" do
   content_type :json
 
+  level = params[:type]
+  puts "Using Level #{level}"
+
+  reader = EventReader.new('app/public/Races.xls')
+  reader.events("RUNNING", level)
 end
 
 get "/activities" do
