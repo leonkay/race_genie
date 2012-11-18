@@ -3,6 +3,7 @@ require "httparty"
 require "sinatra"
 require "json"
 require "omniauth-singly"
+load 'app/routes/runkeeper.rb'
 
 class Event
   attr_accessor :name 
@@ -56,7 +57,7 @@ get "/logout" do
 end
 
 get '/genie' do
-
+=begin
   event1 = Event.new("Event 1")
   event2 = Event.new("Event 2")
   event3 = Event.new("Event 3")
@@ -72,6 +73,7 @@ get '/genie' do
   biking = Sport.new("biking", biking_events)  
 
   @sports = [running, biking]
+=end
 
   erb :genie
 end
@@ -80,4 +82,3 @@ def profiles_url
   "#{SINGLY_API_BASE}/profiles"
 end
 
-load 'app/routes/runkeeper.rb'
