@@ -1,7 +1,7 @@
 
   def get_user_data()
 
-      puts "Querying for Runkeeper data, :#{RK_SELF} / #{session[:access_token]}"
+    puts "Querying for Runkeeper data, :#{RK_SELF} / #{session[:access_token]}"
     data = HTTParty.get(RK_SELF, {
         :query => {:access_token => session[:access_token]}
     }).parsed_response
@@ -14,21 +14,21 @@
   end
 
   def get_activities()
-    @data = HTTParty.get("#{RK_FITNESS}", {
+    data = HTTParty.get("#{RK_FITNESS}", {
         :query => {:access_token => session[:access_token]}
     }).parsed_response
 
-    @activities =  Array.new
-    @data.each do |activity|
+    activities =  Array.new
+    data.each do |activity|
       date = activity["data"]["start_time"].to_time # require active support for this method
       type = activity["data"]["type"]
       distance = activity["data"]["total_distance"] # in meters
 
       map = { :date => date, :type => type, :distance => distance }
 
-      @activities << map
+      activities << map
     end
-    @activities
+    activities
   end
 
   def in_progress?
