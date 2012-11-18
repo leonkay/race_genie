@@ -3,8 +3,10 @@ require "httparty"
 require "sinatra"
 require "json"
 require "omniauth-singly"
-load 'app/routes/runkeeper.rb'
-load 'app/helpers/runkeeper_helper.rb'
+
+
+load File.dirname(__FILE__) + '/routes/runkeeper.rb'
+load File.dirname(__FILE__) + '/helpers/runkeeper_helper.rb'
 
 class Sport
   attr_accessor :name ,:events
