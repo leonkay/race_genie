@@ -1,0 +1,12 @@
+[
+    {
+        "id":1,
+        "name":"Color Run",
+        "type":"5k",
+        "date":"11/20/2012 at 8pm",
+        "time_frame" : "1month",
+        "image_url" : "http://dummy.data.com/image.jpeg",
+        "url":"http://active.com/signup",
+        "description":"This is a Test"
+    }
+]

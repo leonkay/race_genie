@@ -7,11 +7,11 @@ class User
     # Instance variables
     @age = age
     @name = name
-    @pic_url = pic_url
+    @avatar = pic_url
     @email = email
     @gender = gender
   end
-
+=begin
   def self.json_create(object)
     new(object['a'])
   end
@@ -25,5 +25,5 @@ class User
         'gender' => @gender
     }.to_json(*args)
   end
-
+=end
 end
