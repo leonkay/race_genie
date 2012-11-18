@@ -45,20 +45,22 @@ class EventReader
   @insanity = Array.new
 
   count = 0
-  book = Spreadsheet.open xlsx
-  sheet1 = book.worksheet 0
+  #book = Spreadsheet.open xlsx
+  #sheet1 = book.worksheet 0
 
-  sheet1.each do |row| temp = Event.new(count, row[6], row[5], row[5], row[8], row[7], row[10], row[9], row[3])
-  @events << temp
+  #sheet1.each do |row| temp = Event.new(count, row[6], row[5], row[5], row[8], row[7], row[10], row[9], row[3])
+  #@events << temp
 
-  if d
-    count = count + 1
-  end
+  #if d
+  #  count = count + 1
+  #end
 
   puts @events.to_json
   end
-  end
+
+#end
 
   def events(activity_type, difficulty) "stuff"
   end
+
 end
