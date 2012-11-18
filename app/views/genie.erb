@@ -1,0 +1,51 @@
+<div id="profile">
+  <aside class="span4">
+    <section>
+      <h1>
+        <img src="pics/gravatar_profile_pic_11_2012.jpg" alt="Profile pic" height="70" width="70">
+        An Dang
+      </h1>
+    </section>
+  </aside>
+
+</div>
+<p> Our Genie give you some cool events </p>
+
+<table id="slider" border="1">
+
+ <tr id="hard">
+  	<td> <a href="#"> HARD </a> </td>
+ </tr>
+ <tr id="medium">
+ 	<td> <a href="#"> MEDIUM </a> </td>
+ </tr>
+ <tr id="easy">
+ 	<td> <a href="#"> EASY </a> </td>
+ </tr>
+
+</table>
+
+<br />
+<br />
+
+<table id="genie_table" border="1">
+
+  <tr>
+  	<td> TYPE </td>
+  	<td> NOW </td>
+  	<td> THIS MONTH </td>
+  	<td> NEXT MONTH </td>
+  </tr>
+
+  <% @sports.each do |sport| %>
+  <div id="column1">
+      <tr>
+        <td><%= sport.name %></td>
+        <td><%= sport.event[0].name %></td>
+        <td><%= sport.event[1].name %></td>
+        <td><%= sport.event[1].name %></td>
+     </tr>
+  </div>
+  <% end %>
+
+</table>

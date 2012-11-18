@@ -34,6 +34,10 @@ get "/logout" do
   redirect "/"
 end
 
+get '/genie' do
+  erb :genie
+end
+
 def profiles_url
   "#{SINGLY_API_BASE}/profiles"
 end
