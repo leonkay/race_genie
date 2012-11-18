@@ -1,9 +1,11 @@
 
   def get_user_data()
+    while @data.nil?
+      puts "Querying for Runkeeper data, :#{RK_SELF} / #{session[:access_token]}"
     @data = HTTParty.get(RK_SELF, {
         :query => {:access_token => session[:access_token]}
     }).parsed_response
-
+    end
     puts @data.to_json
     name = @data[0]["data"]["profile"]["name"]
     avatar = @data[0]["data"]["profile"]["normal_picture"]
