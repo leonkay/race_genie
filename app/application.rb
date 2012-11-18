@@ -1,8 +1,12 @@
 require "rubygems"
 require "httparty"
 require "sinatra"
+require "json"
 require "omniauth-singly"
-require "rest-client"
+
+
+RK_SELF = 'https://api.singly.com/services/runkeeper/self'
+
 
 SINGLY_API_BASE = "https://api.singly.com"
 SINGLY_ID = "b6bec79037046c1acadbe7f3dc8077fb"
@@ -34,6 +38,10 @@ get "/logout" do
   redirect "/"
 end
 
+
+
 def profiles_url
   "#{SINGLY_API_BASE}/profiles"
 end
+
+load 'app/routes/runkeeper.rb'
