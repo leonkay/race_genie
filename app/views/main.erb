@@ -204,6 +204,7 @@ line-height: normal;
                             <tr>
                                 <td><img src="<%=@user.avatar%>" alt="Profile pic" height="140" width="140"/></td>
                                 <td class="profileTxt">Hi, <span><strong><bold><%=@user.name%></span></bold></strong></td>
+
                                 <td class="profileMsgTxt">
                                     
                                     <div style="float:right;background-color:#0073CC;color:#fff;text-decoration :none;font-size:30px;border-color: #05C #05C #003580;
@@ -232,8 +233,7 @@ line-height: normal;
         </div>
         <br/>
         <div>
-        <span style="font-size:30px;"> <strong>Genie thinks <%= @message %>
-                                     </strong>
+        <span style="font-size:30px;"> Genie thinks <strong><%= @message %></strong>
         </span>
     </div>
         <div style="float:left;width:100px;margin-left:5%;">
