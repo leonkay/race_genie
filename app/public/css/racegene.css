@@ -1,0 +1,32 @@
+@CHARSET "ISO-8859-1";
+
+*{ margin:0 auto; padding:0;}
+
+body{ font:normal normal 12px Arial, Helvetica, sans-serif;}
+
+.layout{
+		
+}
+
+.top-grid{
+	height:180px;
+	background:#42a2ce;
+	font-family: 'Anaheim', sans-serif;
+	font-size:45px;
+	position:absolute;
+	bottom:0px;
+	width:100%;
+}
+
+
+
+.bottom-grid{
+	height:400px;
+	text-align:left;
+}
+
+.howitworks{
+	font-family: 'Anaheim', sans-serif;
+	font-size:45px;
+	margin:150px;
+}
