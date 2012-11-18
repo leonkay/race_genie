@@ -18,8 +18,6 @@ class Sport
 
 end
 
-RK_SELF = 'https://api.singly.com/services/runkeeper/self'
-
 
 SINGLY_API_BASE = "https://api.singly.com"
 SINGLY_ID = "b6bec79037046c1acadbe7f3dc8077fb"
@@ -102,23 +100,30 @@ def genie_thinks
   messages = Array.new
   summaries.each do |summary|
     if summary.lifetime_total < 10000 # 10km
-      status = 'A Total Newb'
+      status = 'New'
     elsif summary.lifetime_total < 30000 # 30km
-      status = 'A Beginner'
-    elsif summary.lifetime_total < 100000 # 100km
-      status = 'A Road Warrior'
+      status = 'Beginner'
+    #elsif summary.lifetime_total < 100000 # 100km
+    #  status = 'A Road Warrior'
     else
-      status = 'INSANE!'
+      status = 'Warrior'
     end
 
-    pre_msg = "You like #{summary.activity_type} and you're #{status}"
-    if summary.in_the_past[:month] < 5000
-      msg = "#{pre_msg}, but you've been SLACKING!"
+    if summary.activity_type == "Running"
+      athlete = "Runner"
+      verb = "ran"
     else
-      msg = "#{pre_msg} and you've been going strong."
+      athlete = "Athlete"
+      verb = "exercised for"
     end
+    pre_msg = "you are a #{status} #{athlete}. You #{verb} #{summary.in_the_past[:month]} meters this past month"
+    #if summary.in_the_past[:month] < 5000
+    #  msg = "#{pre_msg}, but you only went #{summary.in_the_past[:month]} been SLACKING!"
+    #else
+    #  msg = "#{pre_msg} and you've been going strong."
+    #end
 
-    messages << msg
+    messages << pre_msg
 
   end
 
