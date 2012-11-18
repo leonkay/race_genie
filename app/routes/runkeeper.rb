@@ -4,10 +4,10 @@ require "sinatra"
 require "omniauth-singly"
 require 'active_support/all'
 
-load 'app/helpers/runkeeper_helper.rb'
-load 'app/model/user.rb'
-load 'app/model/summary.rb'
-load 'app/model/event.rb'
+load File.dirname(__FILE__) + "/../helpers/runkeeper_helper.rb"
+load File.dirname(__FILE__) +  '/../model/user.rb'
+load File.dirname(__FILE__) +  '/../model/summary.rb'
+load File.dirname(__FILE__) +  '/../model/event.rb'
 
 enable :sessions
 
