@@ -98,11 +98,11 @@ def genie_thinks
 
   messages = Array.new
   summaries.each do |summary|
-    if summary.total_dist < 10000 # 10km
+    if summary.lifetime_total < 10000 # 10km
       status = 'A Total Newb'
-    elsif summary.total_dist < 30000 # 30km
+    elsif summary.lifetime_total < 30000 # 30km
       status = 'A Beginner'
-    elsif summary.total_dist < 100000 # 100km
+    elsif summary.lifetime_total < 100000 # 100km
       status = 'A Road Warrior'
     else
       status = 'INSANE!'

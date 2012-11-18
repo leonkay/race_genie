@@ -53,7 +53,11 @@ class Summarizer
     results = Array.new
 
     @sports.each do |sport|
-      results << Summary.new(sport, @time_frames[sport], @total_dist[sport])
+      total_dist = 0
+      @total_dist[sport].values.each do |dist|
+        total_dist = dist + total_dist
+      end
+      results << Summary.new(sport, @time_frames[sport], @total_dist[sport], total_dist)
     end
 
     results
@@ -61,12 +65,13 @@ class Summarizer
 end
 
 class Summary
-  attr_accessor :activity_type, :in_the_past, :avg_dist_in_the_last, :total_dist
+  attr_accessor :activity_type, :in_the_past, :avg_dist_in_the_last, :total_dist, :lifetime_total
 
-  def initialize(sport, time_frame, total_distance)
+  def initialize(sport, time_frame, total_distance, lifetime_total)
     @activity_type = sport
     @in_the_past = time_frame
     @total_dist = total_distance
+    @lifetime_total = lifetime_total
 
     avg_week = 0
     avg_month = 0
