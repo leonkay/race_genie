@@ -1,8 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Race Gene</title>
+    <title>Race Genie</title>
     <link href="css/racegene.css" rel="stylesheet" type="text/css"/>
     <link href='http://fonts.googleapis.com/css?family=Anaheim' rel='stylesheet' type='text/css'>
 
@@ -45,7 +43,9 @@ $(function () {
         <div class="top-grid">
             <% %w[runkeeper].each do |service| %>
                 <%= service.capitalize %>
-                <span>Focus on runnning, Not plannning!<br/> Experience your race schedule, made simple!</span>
+                <span>Focus on runnning, Not plannning!<br/>
+                    <div class="bold">Experience</div> your race schedule, made simple!
+                </span>
 
                 <div><a href="/auth/singly?service=<%= service %>" style="background-color:green;color:#fff;text-underline:none;"> Sign Up</a></div>
             <% end %>
@@ -55,4 +55,3 @@ $(function () {
 </center>
 
 </body>
-</html>

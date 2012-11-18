@@ -40,6 +40,7 @@ get "/" do
 
     # What does Genie Think
     messages = genie_thinks
+    @message = messages[0]
 
     erb :main
   else
@@ -108,7 +109,7 @@ def genie_thinks
       status = 'INSANE!'
     end
 
-    pre_msg = "You're a #{summary.activity_type} and #{status}"
+    pre_msg = "You like #{summary.activity_type} and you're #{status}"
     if summary.in_the_past[:month] < 5000
       msg = "#{pre_msg}, but you've been SLACKING!"
     else
