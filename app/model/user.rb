@@ -1,10 +1,12 @@
 
 class User
-  def initialize(age, name, pic_url)
+  def initialize(age, name, pic_url, email, gender)
     # Instance variables
     @age = age
     @name = name
     @pic_url = pic_url
+    @email = email
+    @gender = gender
   end
 
   def self.json_create(object)
@@ -15,7 +17,9 @@ class User
     {
         'age'  => @age,
         'name'    => @name,
-        'avatar'  => @pic_url
+        'avatar'  => @pic_url,
+        'email' => @email,
+        'gender' => @gender
     }.to_json(*args)
   end
 

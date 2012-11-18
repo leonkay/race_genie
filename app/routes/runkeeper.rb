@@ -6,7 +6,9 @@ load "app/model/user.rb"
 
 enable :sessions
 
-RK_SELF = 'https://api.singly.com/services/runkeeper/self'
+RK_ROOT = 'https://api.singly.com/services/runkeeper'
+RK_SELF = "#{RK_ROOT}/self"
+RK_FITNESS = "#{RK_ROOT}/fitness_activities"
 
 get "/user" do
   puts "test"
@@ -15,7 +17,9 @@ get "/user" do
   }).parsed_response
 
   name = @data[0]["data"]["profile"]["name"]
-  user = User.new(0, name, '')
+  avatar = @data[0]["data"]["profile"]["normal_picture"]
+  gender = @data[0]["data"]["profile"]["gender"]
+  user = User.new(0, name, avatar, '', gender)
   content_type :json
   user.to_json
 
