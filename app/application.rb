@@ -96,7 +96,7 @@ def genie_thinks
   end
 
   summaries = summarizer.summarize
-
+  puts summaries.to_json
   messages = Array.new
   summaries.each do |summary|
     if summary.lifetime_total < 10000 # 10km
