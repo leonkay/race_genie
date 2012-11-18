@@ -140,11 +140,9 @@
         #profile{
             width:100%;
             background:#42a2ce;
-            opacity:0.7;
-            filter:alpha(opacity=70);
-            color:#153450;
+                      color:#153450;
             text-align:left;
-            height:100px;
+            height:150px;
         }
         #profile img{
             opacity:1;
@@ -204,11 +202,22 @@ line-height: normal;
 
                         <table id="user-table">
                             <tr>
-                                <td><img src="<%=@user.avatar%>" alt="Profile pic" height="90" width="90"/></td>
-                                <td class="profileTxt">Hi, <span style="font-weight: bold"><%=@user.name%></span></td>
+                                <td><img src="<%=@user.avatar%>" alt="Profile pic" height="140" width="140"/></td>
+                                <td class="profileTxt">Hi, <span><strong><bold><%=@user.name%></span></bold></strong></td>
+
                                 <td class="profileMsgTxt">
                                     
-                                    <div style="float:right;">&nbsp;<a href="/logout">Logout</a></div>
+                                    <div style="float:right;background-color:#0073CC;color:#fff;text-decoration :none;font-size:30px;border-color: #05C #05C #003580;
+border-top-color: #05C;
+border-right-color: #05C;
+border-bottom-color: #003580;
+border-left-color: #05C;background-image: -webkit-linear-gradient(top, #08C, #05C);
+background-image: -o-linear-gradient(top, #08C, #05C);
+background-image: linear-gradient(top, #08C, #05C);
+background-repeat: repeat-x;padding: 9px 14px;
+font-size: 15px;
+line-height: normal;
+-webkit-border-radius: 5px;border-radius: 5px;">&nbsp;<a style="text-decoration:none;"href="/logout">Logout</a></div>
 
                                 </td>
                             </tr>
