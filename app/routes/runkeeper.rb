@@ -2,7 +2,6 @@ require "rubygems"
 require "httparty"
 require "sinatra"
 require "omniauth-singly"
-require "chronic"
 require 'active_support/all'
 
 load 'app/helpers/runkeeper_helper.rb'
