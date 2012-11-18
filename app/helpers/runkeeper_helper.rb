@@ -12,7 +12,7 @@ def get_user_data()
         :query => {:access_token => session[:access_token]}
     })
     # try again
-    if raw_data.status == 302
+    if raw_data.code == 302
       puts "trying again"
       raw_data = HTTParty.get(RK_SELF, {
           :query => {:access_token => session[:access_token]}
