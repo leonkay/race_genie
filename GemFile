@@ -3,7 +3,6 @@ source :rubygems
 gem "httparty"
 gem "omniauth-singly"
 gem "sinatra"
-gem "rest-client"
 gem 'bootstrap-sass', '2.0.4'
 gem "json"
 gem "activerecord"
