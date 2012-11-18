@@ -8,13 +8,13 @@ require 'active_support/all'
 def get_user_data()
 
     puts "Querying for Runkeeper data, :#{RK_SELF} / #{session[:access_token]}"
-    raw_data = HTTParty.get(RK_SELF, {
+    raw_data = HTTParty.get("#{RK_SELF}?refresh=true", {
         :query => {:access_token => session[:access_token]}
     })
     # try again
     if raw_data.code == 302
       puts "trying again"
-      raw_data = HTTParty.get(RK_SELF, {
+      raw_data = HTTParty.get("#{RK_SELF}?refresh=true", {
           :query => {:access_token => session[:access_token]}
       })
     end
@@ -32,7 +32,7 @@ def get_user_data()
   end
 
   def get_activities()
-    data = HTTParty.get("#{RK_FITNESS}", {
+    data = HTTParty.get("#{RK_FITNESS}?refresh=true", {
         :query => {:access_token => session[:access_token]}
     }).parsed_response
 
