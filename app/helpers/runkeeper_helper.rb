@@ -1,10 +1,19 @@
+require "rubygems"
+require "httparty"
+require "sinatra"
+require "omniauth-singly"
+require 'active_support/all'
 
-  def get_user_data()
+
+def get_user_data()
 
     puts "Querying for Runkeeper data, :#{RK_SELF} / #{session[:access_token]}"
-    data = HTTParty.get(RK_SELF, {
+    raw_data = HTTParty.get(RK_SELF, {
         :query => {:access_token => session[:access_token]}
-    }).parsed_response
+    })
+
+    puts "Raw data #{raw_data}"
+    data = raw_data.parsed_response
 
     puts "Get User Data [#{Time.now}] - [#{data}]"
 
