@@ -1,0 +1,78 @@
+[{
+        "id" :1,
+        "name" : "Color Run",
+        "classification" : "5k",
+        "activity_type" : "RUNNING",
+        "date":"11/20/2012 at 8pm",
+        "time_frame" : "1month",
+        "image_url" : "http://static.tumblr.com/y2clztm/1lWm6sw0q/running-man.jpg",
+        "url" : "http://active.com/signup",
+        "description" : "This is a Test",
+        "location" : "Boston"
+    },
+    
+    {
+        "id" :2,
+        "name" : "Color Run",
+        "classification" : "5k",
+        "activity_type" : "RUNNING",
+        "date":"11/20/2012 at 8pm",
+        "time_frame" : "3month",
+        "image_url" : "http://www.weightlossexercisediet.com/images/running.jpg",
+        "url" : "http://active.com/signup",
+        "description" : "This is a Test",
+        "location" : "Boston"
+    },
+    {
+        "id" :3,
+        "name" : "Color Run",
+        "classification" : "5k",
+        "activity_type" : "RUNNING",
+        "date":"11/20/2012 at 8pm",
+        "time_frame" : "week",
+        "image_url" : "http://1.bp.blogspot.com/-lLrDTgLj_7M/TbHf_6bceUI/AAAAAAAACC8/gPFuiCn98-c/s1600/Estafet+Running.jpg",
+        "url" : "http://active.com/signup",
+        "description" : "This is a Test",
+        "location" : "Boston"
+    },
+    
+    {
+        "id" :4,
+        "name" : "Color Run",
+        "classification" : "5k",
+        "activity_type" : "BIKING",
+        "date":"11/20/2012 at 8pm",
+        "time_frame" : "1month",
+        "image_url" : "http://www.hickorywellcrafted.com/live/wp-content/uploads/2010/12/1047mountain_biking.jpg",
+        "url" : "http://active.com/signup",
+        "description" : "This is a Test",
+        "location" : "Boston"
+    },
+    
+    {
+        "id" :5,
+        "name" : "Color Run",
+        "classification" : "5k",
+        "activity_type" : "BIKING",
+        "date":"11/20/2012 at 8pm",
+        "time_frame" : "3month",
+        "image_url" : "http://www.allparkcity.com/images/content/5074_8625_Castlewood_Canyon_Mountain_Biking_md.jpg",
+        "url" : "http://active.com/signup",
+        "description" : "This is a Test",
+        "location" : "Boston"
+    },
+    
+    {
+        "id" :6,
+        "name" : "Color Run",
+        "classification" : "5k",
+        "activity_type" : "BIKING",
+        "date":"11/20/2012 at 8pm",
+        "time_frame" : "week",
+        "image_url" : "https://secure.touchnet.com/C21564_ustores/web/images/store_4/Biking.jpg",
+        "url" : "http://active.com/signup",
+        "description" : "This is a Test",
+        "location" : "Boston"
+    }
+    
+    ]

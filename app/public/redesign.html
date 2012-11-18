@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+  <head>
+    <title>RACE GENNE</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/serverjack.js"></script>
+
+	<script >
+	$(function(){
+		loadUser();
+		filterGrid();
+	});
+	 
+
+</script>
+    
+  </head>
+  <body>
+    <div id="profile">
+  <aside class="span4">
+    <section>
+      <h1>
+        <img src="pics/gravatar_profile_pic_11_2012.jpg" alt="Profile pic" height="70" width="70" id="profile-avatar"/>
+        <span id="profile-user">An Dang</span>
+      </h1>
+    </section>
+  </aside>
+
+</div>
+<p> Our Genie give you some cool events </p>
+
+<table id="slider" border="1">
+
+ <tr id="hard">
+  	<td> <a href="javascript:void(0)" onclick="filterGrid(3)"> HARD </a> </td>
+ </tr>
+ <tr id="medium">
+ 	<td> <a href="javascript:void(0)" onclick="filterGrid(2)"> MEDIUM </a> </td>
+ </tr>
+ <tr id="easy">
+ 	<td> <a href="javascript:void(0)" onclick="filterGrid(1)"> EASY </a> </td>
+ </tr>
+
+</table>
+
+<br />
+<br />
+
+<table id="genie_table" border="1">
+
+  <tr>
+  	<td> TYPE </td>
+  	<td> NOW </td>
+  	<td> THIS MONTH </td>
+  	<td> NEXT MONTH </td>
+  </tr>
+
+  
+      <tr id="running-events">
+      	<td>Running</td>
+      	
+          <td class="now">
+          	
+          </td>
+        
+          <td class="month1">
+          </td>
+        
+          <td class="month3">
+          </td>
+        
+
+     </tr>
+  
+  
+      <tr id="biking-events">
+      	<td>Biking</td>
+      	
+          <td class="now">
+          	
+          </td>
+        
+          <td class="month1">
+          </td>
+        
+          <td class="month3">
+          </td>
+        
+
+     </tr>
+  
+
+</table>
+  </body>
+</html>
+
