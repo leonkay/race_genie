@@ -195,9 +195,10 @@
 
                         <table id="user-table">
                             <tr>
-                                <td><img src="<%=@user.avatar%>" alt="Profile pic" height="70" width="70"/></td>
-                                <td class="profileTxt">Hi, <span><%=@user.name%></span></td>
-                                <td class="profileMsgTxt"><span> Genie thinks <%= @message %></span>
+                                <td><img src="<%=@user.avatar%>" alt="Profile pic" height="90" width="90"/></td>
+                                <td class="profileTxt">Hi, <span><strong><bold><%=@user.name%></span></bold></strong></td>
+                                <td class="profileMsgTxt">
+                                    
                                     <div style="float:right;">&nbsp;<a href="/logout">Logout</a></div>
 
                                 </td>
@@ -213,6 +214,11 @@
 
         </div>
         <br/>
+        <div>
+        <span style="font-size:30px;"> <strong>Genie thinks <%= @message %>
+                                     </strong>
+        </span>
+    </div>
         <div style="float:left;width:100px;margin-left:5%;">
 
             <p>
