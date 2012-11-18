@@ -6,6 +6,8 @@
         :query => {:access_token => session[:access_token]}
     }).parsed_response
 
+    puts "Get User Data [#{Time.now}] - [#{data}]"
+
     name = data[0]["data"]["profile"]["name"]
     avatar = data[0]["data"]["profile"]["normal_picture"]
     gender = data[0]["data"]["profile"]["gender"]
