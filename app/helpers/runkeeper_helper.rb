@@ -15,7 +15,7 @@
   end
 
   def get_activities()
-    @data = HTTParty.get(RK_FITNESS, {
+    @data = HTTParty.get("#{RK_FITNESS}?refresh=true", {
         :query => {:access_token => session[:access_token]}
     }).parsed_response
 
