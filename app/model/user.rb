@@ -1,5 +1,8 @@
 
 class User
+
+  attr_accessor :name, :age, :pic_url, :email, :gender
+  
   def initialize(age, name, pic_url, email, gender)
     # Instance variables
     @age = age

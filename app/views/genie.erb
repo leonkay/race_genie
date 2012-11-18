@@ -1,0 +1,74 @@
+<div id="profile">
+  <aside class="span4">
+    <section>
+      <h1>
+        <img src="pics/gravatar_profile_pic_11_2012.jpg" alt="Profile pic" height="70" width="70" />
+        An Dang
+      </h1>
+    </section>
+  </aside>
+
+</div>
+<p> Our Genie give you some cool events </p>
+
+<table id="slider" border="1">
+
+ <tr id="hard">
+  	<td> <a href="#"> HARD </a> </td>
+ </tr>
+ <tr id="medium">
+ 	<td> <a href="#"> MEDIUM </a> </td>
+ </tr>
+ <tr id="easy">
+ 	<td> <a href="#"> EASY </a> </td>
+ </tr>
+
+</table>
+
+<br />
+<br />
+
+<table id="genie_table" border="1">
+
+  <tr>
+  	<td> TYPE </td>
+  	<td> NOW </td>
+  	<td> THIS MONTH </td>
+  	<td> NEXT MONTH </td>
+  </tr>
+
+  <% @sports.each do |sport| %>
+  <div id="column1">
+      <tr>
+      	<td><%= sport.name %></td>
+      	<% sport.events.each do |event| %>
+          <td>
+          	<div id="event">
+          	  <table>
+          	  	<tr> 
+          	      	<div id="name_box">
+          	      	  <%= event.name %>
+          	        </div>
+          	    </tr>
+          	    <tr><br/></tr>
+          		 <tr> 
+          		  	<div id="image_box" width="200">
+          		      <img src="pics/soccer-boys.jpg" alt="Profile pic" height="240" /> 
+          		    </div>
+          		 </tr>
+          		 <tr>
+          		 	<div id="description_box" width="200">
+          		 	  <p> Soccer, is a sport played between two teams of eleven players with a spherical ball. At the turn of the 21st century, the game was played by over 250 million players in over 200 countries, making it the world's most popular sport
+          		 	  </p>
+          		 	</div>
+          		 </tr>	
+          	  </table>
+          	</div>
+          </td>
+        <% end %>
+
+     </tr>
+  </div>
+  <% end %>
+
+</table>
